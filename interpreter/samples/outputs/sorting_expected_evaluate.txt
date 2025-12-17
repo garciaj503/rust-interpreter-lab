@@ -1,0 +1,4 @@
+Before sorting:
+[42, 7, 19, 3, 25, 14]
+After sorting:
+[42, 7, 19, 3, 25, 14]

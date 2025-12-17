@@ -1,0 +1,3 @@
+Two distinct real roots:
+2
+1

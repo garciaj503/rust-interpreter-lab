@@ -1,0 +1,16 @@
+let mut numbers = [42, 7, 19, 3, 25, 14];
+println!("Before sorting:");
+println!("{:?}", numbers);
+let len = numbers.len();
+for let i =  in 0..len {
+for let j =  in 0..len - i - 1 {
+if numbers[j] > numbers[j + 1] {
+let a = numbers[j];
+let b = numbers[j + 1];
+numbers[j] = b;
+numbers[j + 1] = a;
+}
+}
+}
+println!("After sorting:");
+println!("{:?}", numbers);
