@@ -1,0 +1,67 @@
+---
+name: Rust Interpreter Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scanner_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Flex and Bison
+        run: |
+          apt update
+          apt install -y flex bison
+          bison --version
+
+      - name: Run Scanner Tests
+        run: |
+          cd scanner
+          echo "Flex Scanner Tests"
+          make test
+          ./scanner_test.out
+
+  parser_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Flex and Bison
+        run: |
+          apt update
+          apt install -y flex bison
+          bison --version
+
+      - name: Run Parser Tests
+        run: |
+          cd parser
+          echo "Bison Parser Tests"
+          make test
+          ./parser_test.out
+
+  lab_5_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Flex and Bison
+        run: |
+          apt update
+          apt install -y flex bison
+          bison --version
+
+      - name: Run Interpreter Tests
+        run: |
+          cd interpreter
+          echo "Interpreter Tests"
+          make test
+          ./interpreter_test.out
