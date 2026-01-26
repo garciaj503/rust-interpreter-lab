@@ -46,7 +46,7 @@ jobs:
           make test
           ./parser_test.out
 
-  lab_5_tests:
+  interpreter_tests:
     runs-on: ubuntu-latest
     container:
       image: gitlab.cs.wallawalla.edu:5050/cs_department/docker-images/cpp
